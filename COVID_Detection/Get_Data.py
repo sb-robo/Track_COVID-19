@@ -44,3 +44,12 @@ class MakeDataset():
                             
                         if img_name not in os.listdir(target_path):
                             shutil.copy2(img_path,target_path)
+
+    def TestData(self):
+        
+        #create train data
+        trainPath = self.targetPath + 'Train/'
+        testPath = self.targetPath + 'Test/'
+
+        for folder in os.listdir(trainPath):
+            pass

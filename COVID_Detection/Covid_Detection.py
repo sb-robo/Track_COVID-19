@@ -18,4 +18,5 @@ if __name__ == "__main__":
     ImagePaths = ["Chest_Xray/","Covid_Xray/"]
     md = Data.MakeDataset(ImagePaths)
     md.TrainData()
-    
+    md.TestData()
+    print("completed")

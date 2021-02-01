@@ -47,9 +47,20 @@ class MakeDataset():
 
     def TestData(self):
         
-        #create train data
+        #create train data 
         trainPath = self.targetPath + 'Train/'
         testPath = self.targetPath + 'Test/'
 
         for folder in os.listdir(trainPath):
-            pass
+            if not os.path.exists(testPath + folder):
+                os.mkdir(testPath + folder)
+            
+            image_list = os.listdir(os.path.join(trainPath, folder))
+            test_size = int(len(image_list)*0.2)
+             
+            for i in range(test_size):
+                img_name = image_list[-(i+1)]
+                img_path = os.path.join(trainPath, folder, img_name)
+                target_path = os.path.join(testPath, folder)
+
+                shutil.move(img_path,target_path)

@@ -63,4 +63,7 @@ class MakeDataset():
                 img_path = os.path.join(trainPath, folder, img_name)
                 target_path = os.path.join(testPath, folder)
 
-                shutil.move(img_path,target_path)
+                try:
+                    shutil.move(img_path,target_path)
+                except:
+                    os.remove(img_path)

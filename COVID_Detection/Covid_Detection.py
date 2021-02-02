@@ -1,5 +1,7 @@
+import os
 import Get_Data as Data
 from Get_Model import BuildModel
+import ImageGenerator as ig
 
 
 dataset_path = './Dataset/'
@@ -21,7 +23,10 @@ if __name__ == "__main__":
     md = Data.MakeDataset(ImagePaths)
     md.TrainData()
     md.TestData()
+
+    train_generator = ig.TrainGenerator()
+    val_generator = ig.ValGenerator()
     
     VggModel = BuildModel()
     VggModel.GetModel(input_shape=(224,224,3), no_of_class=3, learning_rate=0.0001)
-    print(VggModel.ModelLayerInfo())
+    

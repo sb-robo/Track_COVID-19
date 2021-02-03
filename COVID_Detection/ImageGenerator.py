@@ -16,7 +16,7 @@ def TrainGenerator():
     train_generator = train_idg.flow_from_directory(
         './Dataset/CT_Images/Train/',
         target_size=(224,224),
-        batch_size=32,
+        batch_size=16,
         class_mode='categorical'
         )
 
@@ -30,7 +30,7 @@ def ValGenerator():
     val_generator = val_idg.flow_from_directory(
         './Dataset/CT_Images/test',
         target_size=(224,224),
-        batch_size=24,
+        batch_size=16,
         class_mode='categorical'
         )
 

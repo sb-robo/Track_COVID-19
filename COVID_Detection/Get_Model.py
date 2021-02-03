@@ -33,3 +33,11 @@ class BuildModel:
 
     def ModelLayerInfo(self):
         return self.model.summary()
+
+    def TrainModel(self, train, validation, epochs, steps_per_epoch, validation_steps):
+        self.hist = self.model.fit(
+            train, epochs=epochs, 
+            steps_per_epoch=steps_per_epoch,
+            validation_data=validation,
+            validation_steps=validation_steps
+            )

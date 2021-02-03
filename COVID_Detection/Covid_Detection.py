@@ -28,8 +28,8 @@ if __name__ == "__main__":
     val_generator = ig.ValGenerator()
     
     VggModel = BuildModel()
-    VggModel.GetModel(input_shape=(224,224,3), no_of_class=3, learning_rate=0.0001)
+    VggModel.GetModel(input_shape=(224,224,3), no_of_class=3, learning_rate=0.0005)
     VggModel.TrainModel(
-        train_generator, val_generator, epochs=10, 
+        train_generator, val_generator, epochs=20, 
         steps_per_epoch=39, validation_steps=10)
     

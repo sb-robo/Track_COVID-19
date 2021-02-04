@@ -41,3 +41,10 @@ class BuildModel:
             validation_data=validation,
             validation_steps=validation_steps
             )
+
+    def SaveModel(self):
+        try:
+            os.mkdir('./Model/')
+            self.model.save('./Model/vgg.h5')
+        except:
+            self.model.save('./Model/vgg.h5')

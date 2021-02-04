@@ -32,4 +32,6 @@ if __name__ == "__main__":
     VggModel.TrainModel(
         train_generator, val_generator, epochs=20, 
         steps_per_epoch=39, validation_steps=10)
-    
+
+    #save Model
+    VggModel.SaveModel()

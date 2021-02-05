@@ -44,7 +44,7 @@ class BuildModel:
 
     def SaveModel(self):
         try:
-            os.mkdir('./Model/')
-            self.model.save('./Model/vgg_detection.h5')
+            os.mkdir('./Models/')
+            self.model.save('./Models/vgg_detection.h5')
         except:
-            self.model.save('./Model/vgg_detection.h5')
+            self.model.save('./Models/vgg_detection.h5')
